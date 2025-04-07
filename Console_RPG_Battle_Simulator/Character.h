@@ -10,6 +10,7 @@ protected:
 public:
     Character(int hp, int power) : hp(hp), power(power), isDie(false) {};
 
+    virtual void Show() {};
     virtual void Attack(Character* other) {};
     virtual void TakeDamage(int damage) {};
     virtual bool IsDead() { return isDie; }
@@ -18,24 +19,27 @@ public:
 
 class Player : public Character {
 public:
-    Player() : Character(100, 10) {};
+    Player() : Character(100, 10) { Show(); }
     ~Player() { "Player ¼Ò¸ê"; }
     
     // override
+    void Show() override;
     void Attack(Character* other) override;
     void TakeDamage(int damage) override;
     bool IsDead() override;
 
     void Recover();
+    void PowerUp();
 };
 
 
 class Enemy : public Character {
 public:
-    Enemy() : Character(100, 10) {};
+    Enemy() : Character(30, 10) { Show(); };
     ~Enemy() { "Enemy ¼Ò¸ê"; }
 
-   
+    // override
+    void Show() override;
     void Attack(Character* other) override;
     void TakeDamage(int damage) override;
     bool IsDead() override;
@@ -44,10 +48,11 @@ public:
 
 class StrongEnemy : public Character {
 public:
-    StrongEnemy() : Character(100, 10) {};
+    StrongEnemy() : Character(50, 30) { Show(); };
     ~StrongEnemy() { "StrongEnemy ¼Ò¸ê"; }
 
     // override
+    void Show() override;
     void Attack(Character* other) override;
     void TakeDamage(int damage) override;
     bool IsDead() override;
