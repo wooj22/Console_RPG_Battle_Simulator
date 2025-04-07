@@ -35,7 +35,7 @@ public:
 
 class Enemy : public Character {
 public:
-    Enemy() : Character(30, 10) { Show(); };
+    Enemy() : Character(20, 5) { Show(); };
     ~Enemy() { "Enemy ¼Ò¸ê"; }
 
     // override
@@ -48,7 +48,7 @@ public:
 
 class StrongEnemy : public Character {
 public:
-    StrongEnemy() : Character(50, 30) { Show(); };
+    StrongEnemy() : Character(50, 15) { Show(); };
     ~StrongEnemy() { "StrongEnemy ¼Ò¸ê"; }
 
     // override
