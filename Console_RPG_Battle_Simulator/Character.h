@@ -2,51 +2,54 @@
 
 class Character
 {
-private:
+protected:
     int hp;
     int power;
     bool isDie;
 
 public:
     Character(int hp, int power) : hp(hp), power(power), isDie(false) {};
-    virtual void Attack(Character* other);
-    virtual void TakeDamage(int damage);
-    virtual bool IsDead();
-    virtual void Recover();
-    virtual void ShowHp();
+
+    virtual void Attack(Character* other) {};
+    virtual void TakeDamage(int damage) {};
+    virtual bool IsDead() { return isDie; }
 };
 
 
 class Player : public Character {
-    
+public:
     Player() : Character(100, 10) {};
+    ~Player() { "Player 家戈"; }
+    
+    // override
     void Attack(Character* other) override;
     void TakeDamage(int damage) override;
     bool IsDead() override;
-    void Recover() override;
-    void ShowHp() override;
-    ~Player() { "Player 家戈"; }
+
+    void Recover();
 };
 
 
 class Enemy : public Character {
+public:
     Enemy() : Character(100, 10) {};
+    ~Enemy() { "Enemy 家戈"; }
+
+   
     void Attack(Character* other) override;
     void TakeDamage(int damage) override;
     bool IsDead() override;
-    void Recover() override;
-    void ShowHp() override;
-    ~Enemy() { "Enemy 家戈"; }
 };
 
 
 class StrongEnemy : public Character {
+public:
     StrongEnemy() : Character(100, 10) {};
+    ~StrongEnemy() { "StrongEnemy 家戈"; }
+
+    // override
     void Attack(Character* other) override;
     void TakeDamage(int damage) override;
     bool IsDead() override;
-    void Recover() override;
-    void ShowHp() override;
-    ~StrongEnemy() { "StrongEnemy 家戈"; }
 };
 

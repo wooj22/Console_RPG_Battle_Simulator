@@ -27,10 +27,10 @@
     <ClCompile Include="Input.cpp">
       <Filter>소스 파일\Module</Filter>
     </ClCompile>
-    <ClCompile Include="ConsoleRenderer.cpp">
-      <Filter>소스 파일\Module</Filter>
-    </ClCompile>
     <ClCompile Include="GameProgram.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,8 +41,8 @@
     <ClInclude Include="Input.h">
       <Filter>헤더 파일\Module</Filter>
     </ClInclude>
-    <ClInclude Include="ConsoleRenderer.h">
-      <Filter>헤더 파일\Module</Filter>
+    <ClInclude Include="Character.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -127,13 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleRenderer.cpp" />
+    <ClCompile Include="Character.cpp" />
     <ClCompile Include="GameProgram.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ConsoleRenderer.h" />
+    <ClInclude Include="Character.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Time.h" />
   </ItemGroup>
