@@ -1,6 +1,4 @@
 #include "Character.h"
-#include <iostream>
-using namespace std;
 
 /*----------------- Player ------------------*/
 void Player::Show() {
@@ -24,10 +22,6 @@ void Player::TakeDamage(int damage) {
 	}
 }
 
-bool Player::IsDead() {
-	return isDie;
-}
-
 void Player::Recover() {
 	hp += 30;
 	if (hp >= 100) hp = 100;
@@ -38,6 +32,7 @@ void Player::PowerUp() {
 	power += 10;
 	cout << "[Player] : Power 강화 (현재 Power : " << power << ")" << endl;
 }
+
 
 
 /*----------------- Enemy ------------------*/
@@ -62,9 +57,6 @@ void Enemy::TakeDamage(int damage) {
 	}
 }
 
-bool Enemy::IsDead() {
-	return isDie;
-}
 
 
 
@@ -88,8 +80,4 @@ void StrongEnemy::TakeDamage(int damage) {
 	else {
 		cout << "[StrongEnemy] :  윽 (남은 체력 : " << hp << ")" << endl;
 	}
-}
-
-bool StrongEnemy::IsDead() {
-	return isDie;
 }

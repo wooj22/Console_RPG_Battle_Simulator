@@ -47,7 +47,7 @@ int main() {
 
 
 	// Game Loop
-	while (!isClear)
+	while (!isClear && !player->IsDead())
 	{
 		/*     Player Turn     */
 		// command input
@@ -136,5 +136,7 @@ int main() {
 
 	// 게임 종료
 	if(isClear) cout << "\n\nGame Success!\n\n\n";
-	if (!isClear) cout << "\n\nGame Overn\n\n\n";
+	if (!isClear) cout << "\n\nGame Over\n\n\n";
+
+	delete player;
 }

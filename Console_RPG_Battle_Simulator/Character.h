@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+using namespace std;
 
 class Character
 {
@@ -9,24 +11,24 @@ protected:
 
 public:
     Character(int hp, int power) : hp(hp), power(power), isDie(false) {};
+    virtual ~Character() {};
 
     virtual void Show() {};
     virtual void Attack(Character* other) {};
     virtual void TakeDamage(int damage) {};
-    virtual bool IsDead() { return isDie; }
+    bool IsDead() { return isDie; }
 };
 
 
 class Player : public Character {
 public:
     Player() : Character(100, 10) { Show(); }
-    ~Player() { "Player 家戈"; }
+    ~Player() override { cout << "Player 家戈"; }
     
     // override
     void Show() override;
     void Attack(Character* other) override;
     void TakeDamage(int damage) override;
-    bool IsDead() override;
 
     void Recover();
     void PowerUp();
@@ -36,25 +38,23 @@ public:
 class Enemy : public Character {
 public:
     Enemy() : Character(20, 5) { Show(); };
-    ~Enemy() { "Enemy 家戈"; }
+    ~Enemy() override {  }
 
     // override
     void Show() override;
     void Attack(Character* other) override;
     void TakeDamage(int damage) override;
-    bool IsDead() override;
 };
 
 
 class StrongEnemy : public Character {
 public:
     StrongEnemy() : Character(50, 15) { Show(); };
-    ~StrongEnemy() { "StrongEnemy 家戈"; }
+    ~StrongEnemy() override {  }
 
     // override
     void Show() override;
     void Attack(Character* other) override;
     void TakeDamage(int damage) override;
-    bool IsDead() override;
 };
 
